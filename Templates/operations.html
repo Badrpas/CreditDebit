@@ -6,7 +6,7 @@
         <!--<table class="table table-bordered table-condensed table-hove">-->
         <ul class="list-group">
             <li class="list-group-item active">
-                <div>Account operations for <span ng-bind="account.Name"></span></div>
+                <div>Account operations for <strong ng-bind="account.Name"></strong></div>
             </li>
             <li class="list-group-item" ng-repeat="operation in operations">
                 <div class="" ng-bind='sprintf(" %+10f", operation.Amount);'></div>

@@ -1,4 +1,9 @@
-Scripts/
+Scripts/angular/
+Scripts/angular-route/
+Scripts/bootstrap/
+Scripts/jquery/
+Scripts/ngDialog/
+Scripts/sprintf/
 
 
 
