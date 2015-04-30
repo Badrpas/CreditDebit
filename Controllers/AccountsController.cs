@@ -35,7 +35,8 @@ namespace Accounting.Controllers
         public IHttpActionResult Post(HttpRequestMessage request)
         {
             var newAccountName = request.Content.ReadAsStringAsync().Result;
-            //var parameters = JsonConvert.DeserializeObject<JsonNewAccount>(jsonString);
+            if (newAccountName.Length == 0)
+                return StatusCode(HttpStatusCode.BadRequest);
             var account = new Account { Name = newAccountName };
             account = Repository.CreateAccount(account);
             return Json(account);

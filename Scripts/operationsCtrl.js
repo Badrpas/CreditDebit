@@ -1,5 +1,6 @@
 ﻿var operationsCtrl = function ($scope, $routeParams, $http, $document) {
     $scope.totalValue = 0;
+    $scope.amount = 0;
     var accountId = $routeParams.accountId;
 
     $http.get("api/operations/" + accountId).success(function (response) {
@@ -25,7 +26,6 @@
                 if (response) {
                     $scope.operations.push(response);
                     $scope.account = response.Account;
-                    $scope.amount = 0;
                 } else {
                 }
                 $scope.showModalOperation = false;
@@ -36,6 +36,7 @@
                 }
             }).then(function() {
                 $scope.addButtonDisabled = false;
+                $scope.amount = 0;
             });
         }
     };

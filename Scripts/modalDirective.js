@@ -1,4 +1,4 @@
-﻿var modalDirective = function () {
+﻿var modalDirective = function ($parse) {
     return {
         template: '<div class="modal fade">' +
             '<div class="modal-dialog">' +
@@ -19,6 +19,7 @@
             scope.title = attrs.title;
 
             scope.$watch(attrs.visible, function (value) {
+                var model = $parse(attrs.t);
                 if (value == true)
                     $(element).modal('show');
                 else
